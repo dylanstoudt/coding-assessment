@@ -22,7 +22,12 @@ function startTimer(){
 
 // declares questions as a set of arrays
 let questions = [{ question: "The 'funtion' and 'var' are known as:", answers: ["Keywords", "Data Types", "Declaration Statements", "Prototypes"], correctAnswer: "Declaration Statements" },
-{ question: "Example question goes here", answers: ["one", "two", "three", "four"], correctAnswer: "three" }
+
+{ question: "'Justify-Content: Center' does what?", answers: ["Items align at the center of the container.", "Items display with equal spacing around them.", "Items align to the right side of the container.", "Items display with equal spacing between them."], correctAnswer: "Items align at the center of the container." },
+
+{ question: "JavaScript can be used for?", answers: ["Showing a user personal data only after they log in.", "Fetching weather data to display and update on a page", "Informing users that they are missing information on a form", "All of the above"], correctAnswer: "All of the above" },
+
+{ question: "Example question goes here", answers: ["one", "two", "three", "four"], correctAnswer: "three" },
 ]
 
 // declares currentQuestion as 0, used to cycle through array
@@ -45,8 +50,10 @@ function renderQuestion() {
 quizDiv.addEventListener("click", function (event) {
 
     if (event.target.matches("button")) {
-        startTimer();
         currentQuestion++;
         renderQuestion();
     }
 })
+
+//create an array that holds Highscores
+//create a function to display that array in highscores.html
