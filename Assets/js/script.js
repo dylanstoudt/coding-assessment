@@ -11,37 +11,42 @@ let countdown = document.querySelector("#timer")
 let timer = 90
 
 // Interval to reduce timer by 1 for every 1000ms
-let timerId = setInterval(function(){
+function startTimer(){
+    let timerId = setInterval(function () {
 
-    timer -=1
-     
-}, 1000)
+        timer -= 1
+        countdown.textContent = ("Time Remaining: " + timer)
+
+    }, 1000)
+}
 
 // declares questions as a set of arrays
-let questions = [{question: "The 'funtion' and 'var' are known as:", answers: ["Keywords", "Data Types", "Declaration Statements", "Prototypes"], correctAnswer: "Declaration Statements"},
-{question: "Example question goes here", answers: ["one", "two", "three", "four"], correctAnswer: "three"}
+let questions = [{ question: "The 'funtion' and 'var' are known as:", answers: ["Keywords", "Data Types", "Declaration Statements", "Prototypes"], correctAnswer: "Declaration Statements" },
+{ question: "Example question goes here", answers: ["one", "two", "three", "four"], correctAnswer: "three" }
 ]
 
 // declares currentQuestion as 0, used to cycle through array
 let currentQuestion = 0
 
+//Question Display
 renderQuestion();
 
-function renderQuestion(){
+function renderQuestion() {
 
     questionDisplay.textContent = (questions[currentQuestion].question)
     button1.textContent = (questions[currentQuestion].answers[0])
     button2.textContent = (questions[currentQuestion].answers[1])
     button3.textContent = (questions[currentQuestion].answers[2])
     button4.textContent = (questions[currentQuestion].answers[3])
-     = (questions[currentQuestion].correctAnswer)
-}   
+    correctButton = (questions[currentQuestion].correctAnswer)
+}
 
 // Event listening for a click inside of quizDiv
-quizDiv.addEventListener("click", function(event){
+quizDiv.addEventListener("click", function (event) {
 
-    if(event.target.matches("button")){
-        currentQuestion++
-        renderQuestion()
+    if (event.target.matches("button")) {
+        startTimer();
+        currentQuestion++;
+        renderQuestion();
     }
 })

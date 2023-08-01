@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+header h2 ul a{
+    text-decoration: none;
+}
+
+#quiz{
+    display:flex;
+    flex-basis: 800px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid black 3px;
+}
+
+body button{
+    margin:5px;
+}
