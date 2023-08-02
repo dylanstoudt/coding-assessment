@@ -28,6 +28,7 @@ let questions = [{ question: "The 'funtion' and 'var' are known as:", answers: [
 { question: "JavaScript can be used for?", answers: ["Showing a user personal data only after they log in.", "Fetching weather data to display and update on a page", "Informing users that they are missing information on a form", "All of the above"], correctAnswer: "All of the above" },
 
 { question: "Example question goes here", answers: ["one", "two", "three", "four"], correctAnswer: "three" },
+{}
 ]
 
 // declares currentQuestion as 0, used to cycle through array
@@ -50,10 +51,19 @@ function renderQuestion() {
 quizDiv.addEventListener("click", function (event) {
 
     if (event.target.matches("button")) {
+        // determines if first question starts timer
+        if(currentQuestion === 0){
+            startTimer()
+        }
+        if(currentQuestion === 4){
+            quizDiv.style.display = 'none';
+        }
+        
+
         currentQuestion++;
         renderQuestion();
     }
 })
 
-//create an array that holds Highscores
+//create an array that stores Highscores
 //create a function to display that array in highscores.html
